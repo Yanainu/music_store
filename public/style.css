@@ -26,10 +26,10 @@ header {
     background: url(./img/header__background.jpg) no-repeat top center;;
     background-size: cover;
     height: 808px;
+    padding: 56px 0;
 }
 
-.header__nav {
-    padding-top: 56px;
+.nav {
     display: flex;
     justify-content: space-between;
 }
@@ -38,6 +38,9 @@ header {
     display: flex;
     justify-content: space-between;
 }
+.nav-logo-container {
+    padding-right: 24px;
+}
 
 .nav__menu {
     display: flex;
@@ -45,7 +48,10 @@ header {
     align-items: center;
 }
 .nav__menu-item {
-    margin-left: 24px;
+    margin-right: 24px;
+}
+.nav__menu-item:last-child {
+    margin-right: 0;
 }
 .nav__menu-link {
     text-decoration: none;
@@ -59,14 +65,9 @@ header {
 
 .nav__buttons {
     display: flex;
-    justify-content: space-between;
 }
-
-.nav__icon {
-    fill: none;
-}
-
 .nav__button {
+    padding: 8px;
     background: none;
     border: none;
     cursor: pointer;
