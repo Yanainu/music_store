@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  
+    <title>Music store</title>
+    <!-- font-family: 'Montserrat', sans-serif;
+    font-family: 'Work Sans', sans-serif; -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="./style.css" type="text/css"> 
+  </head>
+  <body>
+    
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+
+    <header class="header">
+      <div class="base-container">
+        <nav class="header__nav nav">
+          <!-- logo&menu -->
+          <div class="nav__logo-and-menu">
+            <!-- #reusable logo-container -->
+            <div class="nav-logo-container logo-container"> 
+              <img class="nav-logo logo" src="./img/general__store-logo.svg" alt="store logo" width="255" height="40">
+            </div>
+
+            <div class="nav__menu">
+              <div class="nav__menu-item">
+                <a class="nav__menu-link" href="#">Guitars</a>
+              </div>
+
+              <div class="nav__menu-item">
+                <a class="nav__menu-link" href="#">Accessories</a>
+              </div>
+
+              <div class="nav__menu-item">
+                <a class="nav__menu-link" href="#">Storage</a>
+              </div>
+
+              <div class="nav__menu-item">
+                <a class="nav__menu-link" href="#">Lessons</a>
+              </div>
+
+              <div class="nav__menu-item">
+                <a class="nav__menu-link" href="#">Repairs</a>
+              </div>
+            </div>
+          </div>
+          <!-- auth&cart  -->
+          <div class="nav__buttons">
+            <div class="nav__button-container">
+              <button class="nav__button nav__cart-button">
+                <img class="nav__button-icon" src="./img/header__cart-icon.svg" alt="cart" fill="none">
+              </button>
+            </div>
+
+            <div class="nav__button-container">
+              <button class="nav__button nav__authorize-button ">
+                <img class="nav__button-icon" src="./img/header__user-icon.svg" alt="cart">
+              </button>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="header__main-text-container">
+          <h1 class="header__main-text">Fullfilling dreams with strings attached</h1>
+        </div>
+
+        <div class="lessons-banner">
+          <div class="lessons-banner__text-container">
+            <h2 class="lessons-banner__main-text">FREE GUITAR LESSONS!</h2>
+            <p class="lessons-banner__description">Purchase any guitar over $499.99 and recieve a one-hour guitar lesson free.</p>
+          </div>
+
+          <div class="lessons-banner__button-container">
+            <button class="lessons-banner__button">LEARN MORE</button>
+          </div>
+          
+        </div>
+
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="base-container">
+
+        <!-- #reusable section -->
+        <section class="products">
+          <hr class="products__redline" size="3" color="#AB0433">
+
+          <div class="products__head-text-container">
+            <h2 class="products__head-text">New Products</h2>
+          </div>
+
+          <div class="products__items-container">
+            <!-- one card  -->
+            <div class="products__item product-item">
+              <!-- pic  -->
+              <div class="product-item__photo">
+                <img src="./img/main__products_guitar1+.png" alt="guitar 1">
+              </div>
+              <!-- all text + price -->
+              <div class="product-item__info item-info">
+                <!-- main info (name price) -->
+                <div class="item-info__name-and-price">
+                  <p class="item-info__name">Brand name</p>
+                  <p class="item-info__price">$2,995</p>
+                </div>
+                <!-- main info(description) -->
+                <div class="item-info__description-container">
+                  <p class="item-info__description">Product description here</p>
+                </div>
+                <!-- colors avaliable -->
+                <div class="item-info__colors-container">
+                  <p class="item-info__colors">
+                    <span class="item-info__colors-num">0</span> colors available
+                  </p>
+                </div>
+              </div>
+            </div>
+
+      
+
+            <!-- card2 -->
+
+            <div class="products__item product-item">
+              <!-- pic  -->
+              <div class="product-item__photo">
+                <img src="./img/main__products_guitar2+.png" alt="guitar 2">
+              </div>
+              <!-- all text + price -->
+              <div class="product-item__info item-info">
+                <!-- main info (name price) -->
+                <div class="item-info__name-and-price">
+                  <p class="item-info__name">Brand name</p>
+                  <p class="item-info__price">$2,995</p>
+                </div>
+                <!-- main info(description) -->
+                <div class="item-info__description-container">
+                  <p class="item-info__description">Product description here</p>
+                </div>
+                <!-- colors avaliable -->
+                <div class="item-info__colors-container">
+                  <p class="item-info__colors">
+                    <span class="item-info__colors-num">0</span> colors available
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- card 3  -->
+
+            <div class="products__item product-item">
+              <!-- pic  -->
+              <div class="product-item__photo">
+                <img src="./img/main__products_guitar3+.png" alt="guitar 3">
+              </div>
+              <!-- all text + price -->
+              <div class="product-item__info item-info">
+                <!-- main info (name price) -->
+                <div class="item-info__name-and-price">
+                  <p class="item-info__name">Brand name</p>
+                  <p class="item-info__price">$2,995</p>
+                </div>
+                <!-- main info(description) -->
+                <div class="item-info__description-container">
+                  <p class="item-info__description">Product description here</p>
+                </div>
+                <!-- colors avaliable -->
+                <div class="item-info__colors-container">
+                  <p class="item-info__colors">
+                    <span class="item-info__colors-num">0</span> colors available
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div> 
+
+      <!-- POPULAR FINDS SECTION -->
+      <!-- #reusable section -->
+      <section class="products popular-products">
+        <div class="base-container">
+          <hr class="products__redline" size="3" color="#AB0433">
+
+          <div class="products__head-text-container">
+            <h2 class="products__head-text">Popular Finds</h2>
+          </div>
+
+          <div class="products__items-container">
+
+          <!-- one card  -->
+            <div class="products__item product-item popular-item">
+              <!-- pic  -->
+              <div class="product-item__photo">
+                <img src="./img/main__popular-finds_item1+.png" alt="popular item 1">
+              </div>
+              <!-- all text + price -->
+              <div class="product-item__info popular-item__info">
+                <!-- main info (name price) -->
+                <div class="item-info__name-and-price">
+                  <p class="item-info__name">Brand name</p>
+                  <p class="item-info__price">$2,995</p>
+                </div>
+                <!-- main info(description) -->
+                <div class="item-info__description-container">
+                  <p class="item-info__description">Product description here</p>
+                </div>
+                <!-- colors avaliable -->
+                <div class="item-info__colors-container">
+                  <p class="item-info__colors">
+                    <span class="item-info__colors-num">0</span> colors available
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- card2 -->
+
+            <div class="products__item product-item popular-item">
+              <!-- pic  -->
+              <div class="product-item__photo">
+                <img src="./img/main__popular-finds_item2+.png" alt="popular item 2">
+              </div>
+              <!-- all text + price -->
+              <div class="product-item__info popular-item__info">
+                <!-- main info (name price) -->
+                <div class="item-info__name-and-price">
+                  <p class="item-info__name">Brand name</p>
+                  <p class="item-info__price">$2,995</p>
+                </div>
+                <!-- main info(description) -->
+                <div class="item-info__description-container">
+                  <p class="item-info__description">Product description here</p>
+                </div>
+                <!-- colors avaliable -->
+                <div class="item-info__colors-container">
+                  <p class="item-info__colors">
+                    <span class="item-info__colors-num">0</span> colors available
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- card 3  -->
+
+            <div class="products__item product-item popular-item">
+              <!-- pic  -->
+              <div class="product-item__photo">
+                <img src="./img/main__popular-finds_item3+.png" alt="popular item 3">
+              </div>
+              <!-- all text + price -->
+              <div class="product-item__info popular-item__info">
+                <!-- main info (name price) -->
+                <div class="item-info__name-and-price">
+                  <p class="item-info__name">Brand name</p>
+                  <p class="item-info__price">$2,995</p>
+                </div>
+                <!-- main info(description) -->
+                <div class="item-info__description-container">
+                  <p class="item-info__description">Product description here</p>
+                </div>
+                <!-- colors avaliable -->
+                <div class="item-info__colors-container">
+                  <p class="item-info__colors">
+                    <span class="item-info__colors-num">0</span> colors available
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+        
+      <!-- GEAR HEADS section  -->
+      <div class="base-container">
+        <!-- #reusable section -->
+        <section class="products gear-heads">
+          <hr class="products__redline" size="3" color="#AB0433">
+
+          <div class="products__head-text-container">
+            <h2 class="products__head-text">Gear Heads</h2>
+          </div>
+
+          <!-- all articles  -->
+          <div class="gear-heads__articles-container">
+
+            <!-- 2 верхние  -->
+            <div class="gear-heads__articles top-articles">
+              <!-- 1  -->
+              <div class="gear-heads__article article">
+                <div class="article__pic-container_top">
+                  <img class="article__pic" 
+                  width="616" 
+                  height="487" 
+                  src="./img/main__gear-heads_photo1.jpg" 
+                  alt="article photo">
+                </div>
+
+                <div class="article__description-container article__description-container_darkmode">
+                  <h3 class="article__description-title article__description-title_darkmode">Article Title</h3>
+                  <p class="article__description-text article__description-text_darkmode">Article Subhead</p>
+                </div>
+              </div>
+
+              <!-- 2 -->
+              <div class="gear-heads__article article">
+                <div class="article__pic-container_top">
+                  <img class="article__pic" 
+                  width="616" 
+                  height="487" 
+                  src="./img/main__gear-heads_photo2.jpg" 
+                  alt="article photo">
+                </div>
+
+                <div class="article__description-container article__description-container_lightmode">
+                  <h3 class="article__description-title article__description-title_lightmode">Article Title</h3>
+                  <p class="article__description-text article__description-text_lightmode">Article Subhead</p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- 3 нижние  -->
+            <div class="gear-heads__articles bottom-articles">
+              <!-- 3  -->
+              <div class="gear-heads__article article">
+                <div class="article__pic-container_bottom">
+                  <img class="article__pic" 
+                  width="400" 
+                  height="480" 
+                  src="./img/main__gear-heads_photo3.jpg" 
+                  alt="article photo">
+                </div>
+
+                <div class="article__description-container article__description-container_darkmode">
+                  <h3 class="article__description-title article__description-title_darkmode">Article Title</h3>
+                  <p class="article__description-text article__description-text_darkmode">Article Subhead</p>
+                </div>
+              </div>
+
+              <!-- 4 -->
+              <div class="gear-heads__article article">
+                <div class="article__pic-container_bottom">
+                  <img class="article__pic" 
+                  width="400" 
+                  height="480" 
+                  src="./img/main__gear-heads_photo4.jpg" 
+                  alt="article photo">
+                </div>
+
+                <div class="article__description-container article__description-container_lightmode">
+                  <h3 class="article__description-title article__description-title_lightmode">Article Title</h3>
+                  <p class="article__description-text article__description-text_lightmode">Article Subhead</p>
+                </div>
+              </div>
+
+              <!-- 5 -->
+              <div class="gear-heads__article article">
+                <div class="article__pic-container_bottom">
+                  <img class="article__pic" 
+                  width="400" 
+                  height="480" 
+                  src="./img/main__gear-heads_photo5.jpg" 
+                  alt="article photo">
+                </div>
+
+                <div class="article__description-container article__description-container_darkmode">
+                  <h3 class="article__description-title article__description-title_darkmode">Article Title</h3>
+                  <p class="article__description-text article__description-text_darkmode">Article Subhead</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+      </div>
+
+    </main>
+
+    <footer class="footer">
+      <div class="base-container">
+        <div class="footer__all-info footer-info">
+          <!-- два столбика со ссылками  -->
+          <div class="footer-info__navigation footer-navigation">
+            <!-- my account столбик  -->
+            <div class="footer-navigation__block">
+              <hr class="footer-navigation__block-line" size="3" color="#FFFFFF">
+
+              <div class="footer-navigation__block-links footer-nav-links">
+                <h3 class="footer-nav-links__link footer-nav-links__link_title">My Account</h3>
+                
+                <a class="footer-nav-links__link" href="#">Overview</a>
+                <a class="footer-nav-links__link" href="#">Order History</a>
+                <a class="footer-nav-links__link" href="#">Wishlist</a>
+                <a class="footer-nav-links__link" href="#">Account information</a>
+              </div>
+            </div>
+            <!-- store столбик -->
+            <div class="footer-navigation__store">
+              <div class="footer-navigation__block">
+                <hr class="footer-navigation__block-line" size="3" color="#FFFFFF">
+  
+                <div class="footer-navigation__block-links footer-nav-links">
+                  <h3 class="footer-nav-links__link footer-nav-links__link_title">Store</h3>
+                  
+                  <a class="footer-nav-links__link" href="#">Security Notice</a>
+                  <a class="footer-nav-links__link" href="#">Location & Hours</a>
+                  <a class="footer-nav-links__link" href="#">Rentals</a>
+                  <a class="footer-nav-links__link" href="#">Privacy Notice</a>
+                </div>
+              </div>
+            </div>
+          </div> 
+
+          <div class="footer-info__logo-and-socials">
+            <!-- logo  -->
+            <div class="footer-info__logo-container">
+              <img class="footer-info__logo" src="./img/general__store-logo.svg" alt="store logo">
+            </div>
+            <!-- socials  -->
+            <div class="footer-info__socials-container socials">
+              <div class="socials__link-container">
+                <a class="socials__link" href="#">
+                  <img class="socials__link-icon" src="./img/footer__social_youtube-icon.svg" alt="youtube link">
+                </a>
+              </div>
+
+              <div class="socials__link-container">
+                <a class="socials__link" href="#">
+                  <img class="socials__link-icon" src="./img/footer__social_twi-icon.svg" alt="youtube link">
+                </a>
+              </div>
+
+              <div class="socials__link-container">
+                <a class="socials__link" href="#">
+                  <img class="socials__link-icon" src="./img/footer__social_inst-icon.svg" alt="youtube link">
+                </a>
+              </div>
+
+              <div class="socials__link-container">
+                <a class="socials__link" href="#">
+                  <img class="socials__link-icon" src="./img/footer__social_fb-icon.svg" alt="youtube link">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__copyright">
+        <div class="base-container">
+          <p class="footer__copyright-text">©2021 Music Store</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
