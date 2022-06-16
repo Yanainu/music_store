@@ -16,9 +16,17 @@ body {
 h1, h2, h3, p {
     margin: 0;
 }
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+img {
+    max-width: 100%;
+}
 /*стандартный контейнер*/
 .base-container {
-    margin: 0 88px;
+    position: relative;
+    margin: auto;
+    max-width: 1300px;
 }
 
 /*HEADER*/
@@ -26,7 +34,7 @@ header {
     background: url(./img/header__background.jpg) no-repeat top center;;
     background-size: cover;
     height: 808px;
-    padding: 56px 0;
+    padding-top: 56px;
 }
 
 .nav {
@@ -38,22 +46,23 @@ header {
     display: flex;
     justify-content: space-between;
 }
-.nav-logo-container {
+.nav__logo-container {
     padding-right: 24px;
 }
 
-.nav__menu {
+.nav__menu, 
+.menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.nav__menu-item {
+.menu__item {
     margin-right: 24px;
 }
-.nav__menu-item:last-child {
+.menu__item:last-child {
     margin-right: 0;
 }
-.nav__menu-link {
+.menu__link {
     text-decoration: none;
     color: #FCFCFC;
     font-size: 18px;
@@ -72,6 +81,9 @@ header {
     border: none;
     cursor: pointer;
 }
+.header {
+    margin-bottom: 110px;
+}
 
 .header__main-text-container {
     padding: 178px 0;
@@ -89,11 +101,15 @@ header {
 
 /*MAIN*/
 
-/*banner*/
-.lessons-banner {
-    background: url(https://musicheals.ca/wp-content/uploads/2021/05/lacey-williams-0c9CmxU0EJI-unsplash-scaled.jpg) 0 50%/100% auto no-repeat, var(--red);
-    background-blend-mode: soft-light, normal;
+/*wide-banner*/
+.wide-banner {
+    position: absolute;
+    top: 600px;
+    width: 100%;
 
+    background-color: var(--red);
+    background: url(./img/banner-background.jpg);
+    background-size: 100% 100%;
     border: 1px solid #000000;
     box-shadow: 0px 2px 4px rgba(6, 6, 8, 0.1), 0px 12px 32px rgba(0, 0, 0, 0.05);
     border-radius: 10px;
@@ -101,32 +117,26 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-  
-    padding: 32px;
+    padding: 49px 32px;
 }
 
-.lessons-banner__text-container {
+.wide-banner__text-container {
     max-width: 616px;
     color: #FFFFFF;
     text-align: center;
 }
-.lessons-banner__main-text {
+.wide-banner__main-text {
     font-weight: 700;
     font-size: 46px;
     line-height: 120%;
-    /* margin: 0; */
+    margin-bottom: 4px;
 }
-.lessons-banner__description {
+.wide-banner__description {
     line-height: 149%;
     font-size: 24px;
-    /* margin: 0; */
+    margin-bottom: 16px;
 }
-
-.lessons-banner__button-container {
-    padding: 16px;
-}
-
-.lessons-banner__button {
+.wide-banner__button {
     background-color: var(--orange);
     border-radius: 32px;
     border: none;
@@ -137,39 +147,52 @@ header {
     font-size: 14px;
 }
 
-/*products */
-.products {
-    margin-top: 110px;
-    padding: 88px 0;
+/*section */
+.section {
+    padding: 88px 0 80px 0;
 }
-.products__redline {
-    width: 80px;
-    margin: 0 auto;
-}
-.products__head-text-container {
+
+.section__head-text-container {
     padding: 8px 0 16px 0;
 }
-.products__head-text {
+.section__head-text-container::before { 
+    content: '';
+    width: 80px;
+    height: 3px;
+    background: #AB0433;
+    margin: 0 auto;
+    display: block;
+}
+
+.section__head-text {
     font-weight: 700;
     font-size: 40px;
     line-height: 120%;
     color: var(--dark-grey);
     text-align: center;
 }
-.products__items-container {
+.section__items-container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     padding-top: 26px;
 }
-
-.product-item__info {
-    /*#problem filter */
-    filter: drop-shadow(0px 2px 4px rgba(28, 5, 77, 0.1)) drop-shadow(0px 12px 32px rgba(0, 0, 0, 0.05));
+.section__item {
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
     border-radius: 10px;
+    box-shadow: 0px 5px 20px rgb(0 0 0 / 15%);
+}
+
+.item__photo {
+    max-width: 400px;
+}
+.item__info {
     padding: 16px 24px 24px 24px;
 }
 
-.item-info__name-and-price {
+.item-info__header {
     display: flex;
     justify-content: space-between;
     font-size: 18px;
@@ -187,14 +210,13 @@ header {
     line-height: 130%;
     color: var(--light-grey)
 }
-.item-info__colors-container {
+.item-info__badge-container {
     border: 1px solid var(--white);
     border-radius: 20px;
     padding: 2px 6px;
-    width: 115px;
-    height: 22px;
+    display: inline-block;
 }
-.item-info__colors {
+.item-info__badge {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
@@ -202,24 +224,42 @@ header {
     line-height: 150%;
     color: var(--dark-grey)
 }
-.item-info__colors-num {
+.item-info__badge-num {
     font-weight: 700;
 }
 
 /*POPULAR FINDS*/
-.popular-products {
+.popular-section {
     background-color: #ECECEC;
 }
 
 .popular-item, .popular-item__info  {
     background-color: white;
     border-radius: 10px;
-    filter: drop-shadow(0px 2px 4px rgba(28, 5, 77, 0.1)) drop-shadow(0px 12px 32px rgba(0, 0, 0, 0.05));
 }
 
 /*GEAR HEADS*/
 .gear-heads {
     margin-top: 0;
+}
+
+.gear-heads__articles-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 32px;
+}
+
+.gear-heads__article:nth-child(1),
+.gear-heads__article:nth-child(2) {
+    width: 100%;
+    max-width: 615px;
+}
+.gear-heads__article:nth-child(3),
+.gear-heads__article:nth-child(4),
+.gear-heads__article:nth-child(5) {
+    width: 100%;
+    max-width: 400px;
 }
 
 .gear-heads__articles {
@@ -232,6 +272,9 @@ header {
 }
 .article__pic-container_bottom {
     height: 480px;
+}
+.gear-heads__article {
+    margin-bottom: 48px;
 }
 
 /*описание articles общие классы*/
@@ -285,23 +328,19 @@ header {
     background-color: var(--dark-grey);
     padding: 52px 0;
 }
-.footer-info__navigation {
+.footer-info__left-blocks {
     display: flex;
 }
-.footer-navigation__block {
+.left-blocks__block {
     margin-right: 48px;
 }
-.footer-navigation__block-line {
-    width: 58px;
-    margin: 9px 0;
-}
 
-.footer-navigation__block-links {
+.block__navigation-container {
     display: flex;
     flex-direction: column;
     
 }
-.footer-nav-links__link {
+.block__navigation-link {
     margin-bottom: 9px;
     font-weight: 400;
     font-size: 14px;
@@ -310,8 +349,16 @@ header {
     color: #FFFFFF;
     
 }
-.footer-nav-links__link_title {
+.block__navigation-link_title {
     font-weight: 700;
+}
+
+.block__navigation-container::before {
+    content: '';
+    width: 58px;
+    height: 3px;
+    margin: 9px 0;
+    background: #FFFFFF;
 }
 
 /*logo&socials*/
