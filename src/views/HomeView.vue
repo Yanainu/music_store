@@ -1,56 +1,33 @@
 <template>
-  <div></div>
+  <div>
+    <!-- приблизительная структура страницы пока  -->
+    <the-header></the-header>
+
+    <main class="main">
+      <base-container>
+        <SectionWrapper>
+          ПРИВЕТ
+        </SectionWrapper>
+      </base-container>
+    </main>
+  </div>
 </template>
 
-<style lang="postcss">
-.nav {
-    display: flex;
-    justify-content: space-between;
+<script>
+import SectionWrapper from '@/components/UI/SectionWrapper.vue';
+import TheHeader from '../components/header/TheHeader.vue';
+import BaseContainer from '../components/UI/BaseContainer.vue';
+// import SectionItems from '../components/main/SectionItems.vue';
 
-    &__logo-and-menu {
-        display: flex;
-        justify-content: space-between;
-    }
+export default {
+  components: {
+    TheHeader,
+    BaseContainer,
+    SectionWrapper,
+    // SectionItems,
+  },
+};
+</script>
 
-    &__logo-container {
-        padding-right: 24px;
-    }
-
-    &__button-container {
-        padding: 8px;
-    }
-
-    &__buttons {
-        display: flex;
-    }
-
-    &__button {
-        padding: 8px;
-        background: none;
-        border: none;
-        cursor: pointer;
-    }
-
-    @media (max-width: 1225px) {
-      &__button {
-          display: none;
-      }
-    }
-
-    @media (max-width: 760px) {
-      &__logo {
-          width: 153.2px;
-          height: 24px;
-      }
-    }
-}
-
-.burger {
-  display: none;
-
-  @media (max-width: 1225px) {
-    display: block;
-  }
-}
-
+<style lang="postcss" scoped>
 </style>
