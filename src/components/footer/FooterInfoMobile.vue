@@ -1,48 +1,75 @@
 <template>
-    <!-- адаптивная версия этого блока -->
+    <!-- адаптивная версия -->
         <div class="footer__mobile-info mobile-info">
           <!-- my account block      -->
-          <div class="mobile-info__navigation-container">
-            <h3 class="mobile-info__navigation-link mobile-info__navigation-link_title">My Account</h3>
-            
-            <a class="mobile-info__navigation-link" href="#">Overview</a>
-            <a class="mobile-info__navigation-link" href="#">Order History</a>
-            <a class="mobile-info__navigation-link" href="#">Wishlist</a>
-            <a class="mobile-info__navigation-link" href="#">Account information</a>
-          </div>
+          <FooterLinksBlock
+            :blockObject="blockObject">
+          </FooterLinksBlock>
           <!-- socials  -->
           <div class="footer-info__socials-container socials">
-            <div class="socials__link-container">
-              <a class="socials__link" href="#">
-                <img class="socials__link-icon" src="./img/footer__social_youtube-icon.svg" alt="youtube link">
-              </a>
-            </div>
-
-            <div class="socials__link-container">
-              <a class="socials__link" href="#">
-                <img class="socials__link-icon" src="./img/footer__social_twi-icon.svg" alt="youtube link">
-              </a>
-            </div>
-
-            <div class="socials__link-container">
-              <a class="socials__link" href="#">
-                <img class="socials__link-icon" src="./img/footer__social_inst-icon.svg" alt="youtube link">
-              </a>
-            </div>
-
-            <div class="socials__link-container">
-              <a class="socials__link" href="#">
-                <img class="socials__link-icon" src="./img/footer__social_fb-icon.svg" alt="youtube link">
-              </a>
-            </div>
+            <FooterSocialIcon v-for="socialLink in socialLinks" :key="socialLink.imgSrc"
+              :link="socialLink.link"
+              :imgSrc="socialLink.imgSrc"
+              :imgAlt="socialLink.imgAlt">
+            </FooterSocialIcon>
           </div>
-
         </div>
 </template>
 
-<style lang="postcss" scoped>
+<script>
+import FooterSocialIcon from './FooterSocialIcon.vue';
+import FooterLinksBlock from './FooterLinksBlock.vue';
 
-.mobile-info {
-    display: none;
+export default {
+  props: ['blockObject'],
+  components: {
+    FooterSocialIcon,
+    FooterLinksBlock,
+  },
+  data() {
+    return {
+      socialLinks: [
+        {
+          link: '#',
+          imgSrc: './img/footer__social_youtube-icon.svg',
+          imgAlt: 'youtube link',
+        },
+        {
+          link: '#',
+          imgSrc: './img/footer__social_twi-icon.svg',
+          imgAlt: 'twitter link',
+        },
+        {
+          link: '#',
+          imgSrc: './img/footer__social_inst-icon.svg',
+          imgAlt: 'instagram link',
+        },
+        {
+          link: '#',
+          imgSrc: './img/footer__social_fb-icon.svg',
+          imgAlt: 'facebook link',
+        },
+      ],
+    };
+  },
+};
+</script>
+
+<style lang="postcss" scoped>
+.footer-info__socials-container {
+    display: flex;
+    justify-content: right;
+    padding: 32px 0
 }
+.mobile-info {
+  display: none;
+
+  @media (max-width: 760px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 37px;
+  }
+}
+
 </style>

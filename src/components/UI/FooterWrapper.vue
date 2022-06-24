@@ -1,23 +1,24 @@
 <template>
     <footer class="footer">
-      <base-container>
-        <footer-info-desktop></footer-info-desktop>
-        <footer-info-mobile></footer-info-mobile>
-      </base-container>
+      <BaseContainer>
+        <FooterInfo></FooterInfo>
+        <FooterInfoMobile></FooterInfoMobile>
+      </BaseContainer>
     </footer>
 </template>
 
 <script>
 import BaseContainer from './BaseContainer.vue';
-import FooterInfoDesktop from '../footer/FooterInfoDesktop.vue';
+import FooterInfo from '../footer/FooterInfo.vue';
 import FooterInfoMobile from '../footer/FooterInfoMobile.vue';
+
 export default {
   components: {
     BaseContainer,
-    FooterInfoDesktop,
+    FooterInfo,
     FooterInfoMobile,
-  }
-}
+  },
+};
 </script>
 
 <style lang="postcss" scoped>

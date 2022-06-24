@@ -1,14 +1,13 @@
 <template>
     <!-- one card  -->
-    <div class="section__item product-item">
+    <div class="section__item product-item" :class="itemAddClass">
         <!-- pic  -->
-        <div class="product-item__photo-container">
-            <img class="product-item__photo"
-                :src="img"
-                alt="guitar 1">
+        <div class="product-item__photo-container"
+        :class="photoContainerAddClass">
+            <img class="product-item__photo" :src="img" alt="">
         </div>
         <!-- all text + price -->
-        <div class="product-item__info product-info">
+        <div class="product-item__info product-info" :class="itemInfoAddClass">
             <!-- main info (name price) -->
             <div class="product-info__header">
                 <p class="product-info__name">{{ name }}</p>
@@ -30,7 +29,27 @@
 
 <script>
 export default {
-  props: ['name', 'price', 'description', 'colors', 'id', 'img'],
+  props: ['name', 'price', 'description', 'colors', 'id', 'img', 'type'],
+  computed: {
+    itemAddClass() {
+      if (this.type === 'popular') {
+        return 'popular-item';
+      }
+      return '';
+    },
+    photoContainerAddClass() {
+      if (this.type === 'popular') {
+        return 'popular-item__photo-container';
+      }
+      return '';
+    },
+    itemInfoAddClass() {
+      if (this.type === 'popular') {
+        return 'popular-item__info';
+      }
+      return '';
+    },
+  },
 };
 </script>
 
@@ -125,4 +144,18 @@ export default {
         font-weight: 700;
     }
 }
+
+.popular-item__photo-container {
+    background: white;
+}
+.popular-item  {
+    background-color: white;
+    border-radius: 10px;
+
+    &__info {
+        background-color: white;
+        border-radius: 10px;
+    }
+}
+
 </style>

@@ -1,7 +1,7 @@
 <template>
-    <section class="section">
+    <section class="section" :class="sectionAdditionalClass">
         <div class="section__head-text-container">
-            <h2 class="section__head-text">New products</h2>
+            <h2 class="section__head-text"> {{ headerText }}</h2>
         </div>
 
         <slot name="section"></slot>
@@ -10,7 +10,34 @@
 
 <script>
 
-export default {};
+export default {
+  props: ['sectionType'],
+  data() {
+    return {
+    };
+  },
+  computed: {
+    headerText() {
+      if (this.sectionType === 'products') {
+        return 'New Products';
+      }
+      if (this.sectionType === 'popular') {
+        return 'Popular Finds';
+      }
+      return 'Gear Heads';
+    },
+    sectionAdditionalClass() {
+      if (this.sectionType === 'products') {
+        return '';
+      }
+      if (this.sectionType === 'popular') {
+        return 'popular-section';
+      }
+      return 'gear-heads';
+    },
+
+  },
+};
 </script>
 
 <style lang="postcss" scoped>
@@ -54,5 +81,8 @@ export default {};
             width: 80px;
         }
     }
+}
+.popular-section {
+    background-color: #ECECEC;
 }
 </style>
