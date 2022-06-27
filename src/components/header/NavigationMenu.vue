@@ -1,32 +1,47 @@
 <template>
     <div class="navigation__menu">
         <div class="menu">
-            <div class="menu__item">
-                <a class="menu__link" href="#">Guitars</a>
-            </div>
-
-            <div class="menu__item">
-                <a class="menu__link" href="#">Accessories</a>
-            </div>
-
-            <div class="menu__item">
-                <a class="menu__link" href="#">Storage</a>
-            </div>
-
-            <div class="menu__item">
-                <a class="menu__link" href="#">Lessons</a>
-            </div>
-
-            <div class="menu__item">
-                <a class="menu__link" href="#">Repairs</a>
-            </div>
+            <NavigationMenuItem v-for="item in navMenuItems" :key="item.name"
+                :name="item.name"
+                :link="item.link"
+            ></NavigationMenuItem>
         </div>
     </div>
 </template>
 
 <script>
-export default {
+import NavigationMenuItem from './NavigationMenuItem.vue';
 
+export default {
+  components: {
+    NavigationMenuItem,
+  },
+  data() {
+    return {
+      navMenuItems: [
+        {
+          name: 'Guitars',
+          link: '#',
+        },
+        {
+          name: 'Accessories',
+          link: '#',
+        },
+        {
+          name: 'Storage',
+          link: '#',
+        },
+        {
+          name: 'Lessons',
+          link: '#',
+        },
+        {
+          name: 'Repairs',
+          link: '#',
+        },
+      ],
+    };
+  },
 };
 </script>
 
@@ -44,19 +59,6 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    &__item {
-    margin-right: 24px;
-    padding: 16px;
-    }
-    &__item:last-child {
-        margin-right: 0;
-    }
-    &__link {
-        text-decoration: none;
-        color: #FCFCFC;
-        font-size: 18px;
-    }
 
     @media (max-width: 1225px) {
         display: none;
