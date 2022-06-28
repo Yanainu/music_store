@@ -1,17 +1,17 @@
 <template>
     <div class="footer__copyright">
-        <BaseContainer>
+        <!-- <BaseContainer> -->
           <p class="footer__copyright-text">©2021 Music Store</p>
-        </BaseContainer>
+        <!-- </BaseContainer> -->
     </div>
 </template>
 
 <script>
-import BaseContainer from '../UI/BaseContainer.vue';
+// import BaseContainer from '../UI/BaseContainer.vue';
 
 export default {
   components: {
-    BaseContainer,
+    // BaseContainer,
   },
 };
 </script>

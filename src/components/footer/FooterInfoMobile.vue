@@ -1,30 +1,30 @@
 <template>
     <!-- адаптивная версия -->
         <div class="footer__mobile-info mobile-info">
-          <!-- my account block      -->
-          <FooterLinksBlock
-            :blockObject="blockObject">
-          </FooterLinksBlock>
+          <!-- my account block-->
+          <VerticalMenu
+            :links="links">
+          </VerticalMenu>
           <!-- socials  -->
           <div class="footer-info__socials-container socials">
-            <FooterSocialIcon v-for="socialLink in socialLinks" :key="socialLink.imgSrc"
+            <FooterSocials v-for="socialLink in socialLinks" :key="socialLink.imgSrc"
               :link="socialLink.link"
               :imgSrc="socialLink.imgSrc"
               :imgAlt="socialLink.imgAlt">
-            </FooterSocialIcon>
+            </FooterSocials>
           </div>
         </div>
 </template>
 
 <script>
-import FooterSocialIcon from './FooterSocialIcon.vue';
-import FooterLinksBlock from './FooterLinksBlock.vue';
+import FooterSocials from './FooterSocials.vue';
+import VerticalMenu from './VerticalMenu.vue';
 
 export default {
   props: ['blockObject'],
   components: {
-    FooterSocialIcon,
-    FooterLinksBlock,
+    FooterSocials,
+    VerticalMenu,
   },
   data() {
     return {
