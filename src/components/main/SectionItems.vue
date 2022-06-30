@@ -6,6 +6,7 @@
     :colors="product.colors"
     :img="product.img"
     :theme="cardsTheme"
+    :mode="mode"
   ></ProductItem>
 </template>
 
@@ -24,6 +25,10 @@ export default {
     cardsTheme: {
       type: String,
       default: 'default',
+    },
+    mode: {
+      type: String,
+      default: '',
     },
   },
 };

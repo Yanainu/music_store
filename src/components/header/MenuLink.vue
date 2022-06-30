@@ -1,6 +1,8 @@
 <template>
   <div class="menu__item">
-      <a class="menu__link" :href="href">{{ name }}</a>
+      <router-link :to="href" :class="`menu__link menu__link--mode--${mode}`">
+      {{ name }}
+      </router-link>
   </div>
 </template>
 
@@ -14,6 +16,10 @@ export default {
     href: {
       type: String,
       required: true,
+    },
+    mode: {
+      type: String,
+      default: '',
     },
   },
 };
@@ -34,6 +40,10 @@ export default {
       text-decoration: none;
       color: #FCFCFC;
       font-size: 18px;
+
+      &--mode--dark {
+        color: black;
+      }
   }
 }
 </style>

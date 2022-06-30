@@ -3,6 +3,7 @@
     <MenuLink v-for="link in menuLinks" :key="link.name"
       :name="link.name"
       :href="link.href"
+      :mode="mode"
     ></MenuLink>
   </div>
 </template>
@@ -11,6 +12,12 @@
 import MenuLink from './MenuLink.vue';
 
 export default {
+  props: {
+    mode: {
+      type: String,
+      default: '',
+    },
+  },
   components: {
     MenuLink,
   },
@@ -23,7 +30,7 @@ export default {
         },
         {
           name: 'Accessories',
-          href: '/accesories',
+          href: '/accessories',
         },
         {
           name: 'Storage',

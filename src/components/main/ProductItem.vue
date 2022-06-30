@@ -1,5 +1,5 @@
 <template>
-  <div class="product-item">
+  <div :class="`product-item product-item--mode--${mode}`">
     <!-- pic  -->
     <div :class="`product-item__photo-container product-item__photo-container--theme--${theme}`">
       <img class="product-item__photo"
@@ -54,6 +54,10 @@ export default {
       type: String,
       default: 'default',
     },
+    mode: {
+      type: String,
+      default: '',
+    },
   },
 };
 </script>
@@ -94,6 +98,12 @@ export default {
     display: none;
   }
 
+  &--mode--not-main-page {
+    &:last-child {
+      display: block;
+    }
+  }
+
   &__info {
     padding: 16px 24px 24px 24px;
     background: #FFFFFF;
@@ -101,7 +111,6 @@ export default {
   }
 
   @media (max-width: 1225px) {
-    width: 46%;
     max-width: 520px;
     flex-grow: 1;
 

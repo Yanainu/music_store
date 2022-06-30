@@ -1,6 +1,8 @@
 <template>
   <div :class="`article article--theme--${theme}`">
-    <div class="article__pic-container" :style="{ backgroundImage: imageUrl }">
+    <div class="article__pic-container">
+    <!-- style="background: url('../../../public/img/main__gear-heads_photo1.jpg');"
+    style="background: url('../../assets/images/main__gear-heads_photo1.jpg');" -->
     <!-- тут внутри фоновая картинка  -->
     </div>
 

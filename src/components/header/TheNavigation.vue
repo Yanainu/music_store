@@ -4,9 +4,11 @@
     <div class="navigation__main">
 
       <div class="navigation__logo-container">
+        <router-link to="/">
           <img class="navigation__logo"
               src="../../assets/images/general__store-logo.svg"
               alt="store logo">
+        </router-link>
       </div>
       <div class="navigation__menu">
         <TheMenu/>
