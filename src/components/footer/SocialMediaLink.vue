@@ -1,6 +1,6 @@
 <template>
   <div class="socials__link-container">
-    <a class="socials__link" :href="social.href">
+    <a class="socials__link" :href="href">
       <img class="socials__link-icon" :src="iconUrl" alt="icon">
     </a>
     </div>

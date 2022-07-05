@@ -6,7 +6,7 @@
       <div class="navigation__logo-container">
         <router-link to="/">
           <img class="navigation__logo"
-              src="../../assets/images/general__store-logo.svg"
+              src="@/assets/images/general__store-logo.svg"
               alt="store logo">
         </router-link>
       </div>
@@ -18,25 +18,25 @@
     <div class="navigation__buttons">
       <button class="navigation__button">
         <img class="navigation__button-icon"
-          src="../../assets/images/header__cart-icon.svg"
+          src="@/assets/images/header__cart-icon.svg"
           alt="cart icon">
       </button>
 
       <button class="navigation__button">
         <img class="navigation__button-icon"
-          src="../../assets/images/header__user-icon.svg"
+          src="@/assets/images/header__user-icon.svg"
           alt="authorize icon">
       </button>
 
       <button class="navigation__button burger">
-        <img src="../../assets/images/burger-menu-icon.svg" alt="burger menu">
+        <img src="@/assets/images/burger-menu-icon.svg" alt="burger menu">
       </button>
     </div>
   </nav>
 </template>
 
 <script>
-import TheMenu from './TheMenu.vue';
+import TheMenu from '@/components/header/TheMenu.vue';
 
 export default {
   components: {

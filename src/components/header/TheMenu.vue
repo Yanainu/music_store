@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import MenuLink from './MenuLink.vue';
+import MenuLink from '@/components/header/MenuLink.vue';
 
 export default {
   props: {
@@ -31,10 +31,6 @@ export default {
         {
           name: 'Accessories',
           href: '/accessories',
-        },
-        {
-          name: 'Storage',
-          href: '/storage',
         },
         {
           name: 'Lessons',

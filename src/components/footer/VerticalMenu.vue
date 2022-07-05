@@ -5,9 +5,10 @@
         {{ title }}
       </h3>
 
-      <a class="vertical-menu__link" :href="link.href"
-        v-for="link in links" :key="link.title" >
-          {{ link.title }}
+      <a class="vertical-menu__link"
+      :href="link.href"
+      v-for="link in links" :key="link.name" >
+          {{ link.name }}
       </a>
 
     </div>
@@ -23,7 +24,7 @@ export default {
     },
     title: {
       type: String,
-      required: true,
+      default: '',
     },
   },
 };

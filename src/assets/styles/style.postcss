@@ -1,9 +1,30 @@
-@font-face {
-  font-family: "Montserrat";
-  src: url("//public/fonts/Montserrat/Montserrat-VariableFont_wght");
-}
+@import "fonts.postcss";
 
-@font-face {
-  font-family: "Work Sans";
-  src: url("//public/fonts/Work_Sans/WorkSans-VariableFont_wght");
+body {
+  margin: 0 auto;
+
+  --red: #ab0433;
+  --orange: #ff753a;
+  --black: #252525;
+  --dark-grey: #505050;
+  --light-grey: #767676;
+  --white: #eaeaea;
+  --white-gradient: linear-gradient(134.57deg, #ffffff 0%, #d3d3d3 100%);
+
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
 }

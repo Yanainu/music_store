@@ -1,39 +1,35 @@
 <template>
-  <BaseHeader mode="accessories">
-  </BaseHeader>
-
-  <SectionWrapper>
+    <SectionWrapper>
     <template v-slot:headText>
-      Accessories
+      Guitars
     </template>
     <template v-slot:content>
       <SectionItems
-        :products="accessories"
+        :products="products"
+        theme="grey"
       ></SectionItems>
     </template>
   </SectionWrapper>
-
-  <TheFooter/>
 </template>
 
 <script>
-import BaseHeader from '@/components/UI/BaseHeader.vue';
+import products from '@/helpers/products.';
 import SectionWrapper from '@/components/UI/SectionWrapper.vue';
 import SectionItems from '@/components/main/SectionItems.vue';
-import TheFooter from '@/components/footer/TheFooter.vue';
-import accessories from '@/helpers/accessories';
 
 export default {
   components: {
-    BaseHeader,
     SectionWrapper,
     SectionItems,
-    TheFooter,
   },
   data() {
     return {
-      accessories,
+      products,
     };
   },
 };
 </script>
+
+<style>
+
+</style>

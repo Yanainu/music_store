@@ -1,7 +1,7 @@
 <template>
     <div class="socials">
       <SocialMediaLink
-        v-for="social in socials" :key="social.title"
+        v-for="social in socials" :key="social.href"
         :href="social.href"
         :iconUrl="social.iconUrl"
       ></SocialMediaLink>
@@ -20,19 +20,19 @@ export default {
       socials: [
         {
           href: 'https://www.youtube.com/',
-          iconUrl: '../../assets/footer__social_youtube-icon.svg',
+          iconUrl: '/img/footer__social_youtube-icon.svg',
         },
         {
           href: 'https://www.twitter.com/',
-          iconUrl: '../../assets/footer__social_twi-icon.svg',
+          iconUrl: '/img/footer__social_twi-icon.svg',
         },
         {
           href: 'https://www.instagram.com/',
-          iconUrl: '../../assets/footer__social_inst-icon.svg',
+          iconUrl: '/img/footer__social_inst-icon.svg',
         },
         {
           href: 'https://www.facebook.com/',
-          iconUrl: '../../assets/footer__social_fb-icon.svg',
+          iconUrl: '/img/footer__social_fb-icon.svg',
         },
       ],
     };
@@ -41,5 +41,9 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-
+.socials {
+    display: flex;
+    justify-content: right;
+    padding: 32px 0
+}
 </style>

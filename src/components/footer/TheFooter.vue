@@ -1,7 +1,6 @@
 <template>
 
   <footer class="footer">
-    <h2>test</h2>
     <BaseContainer>
         <div class="footer-info">
           <div class="footer-info__vertical-menus">
@@ -19,7 +18,7 @@
           <div class="footer-info__logo-and-socials">
             <!-- logo  -->
             <div class="footer-info__logo-container ">
-              <img class="footer-info__logo" src="../../assets/images/general__store-logo.svg"
+              <img class="footer-info__logo" src="@/assets/images/general__store-logo.svg"
               alt="store logo">
             </div>
             <!-- socials  -->
@@ -27,9 +26,9 @@
           </div>
         </div>
 
-      <FooterInfoMobile
+      <FooterMobile
         :links="footerLinks.account">
-      </FooterInfoMobile>
+      </FooterMobile>
     </BaseContainer>
 
     <div class="footer__copyright">
@@ -41,15 +40,59 @@
 </template>
 
 <script>
-import BaseContainer from '../UI/BaseContainer.vue';
-import VerticalMenu from './VerticalMenu.vue';
-import FooterSocials from './FooterSocials.vue';
+import FooterMobile from '@/components/footer/FooterMobile.vue';
+import BaseContainer from '@/components/UI/BaseContainer.vue';
+import VerticalMenu from '@/components/footer/VerticalMenu.vue';
+import FooterSocials from '@/components/footer/FooterSocials.vue';
 
 export default {
   components: {
     BaseContainer,
     VerticalMenu,
     FooterSocials,
+    FooterMobile,
+  },
+  data() {
+    return {
+      footerLinks: {
+        account: [
+          {
+            name: 'Overview',
+            href: '/overview',
+          },
+          {
+            name: 'Order History',
+            href: '/history',
+          },
+          {
+            name: 'Wishlist',
+            href: '/wishlist',
+          },
+          {
+            name: 'Account information',
+            href: '/account',
+          },
+        ],
+        store: [
+          {
+            name: 'Security Notice',
+            href: '/security',
+          },
+          {
+            name: 'Location & Hours',
+            href: '/location',
+          },
+          {
+            name: 'Rentals',
+            href: '/rentals',
+          },
+          {
+            name: 'Privacy Notice',
+            href: '/privacy',
+          },
+        ],
+      },
+    };
   },
 };
 </script>

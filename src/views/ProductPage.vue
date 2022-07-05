@@ -1,0 +1,179 @@
+<template>
+  <BaseContainer>
+    <div class="product-item">
+      <!-- главный заголовок - полное название  -->
+      <div class="product-item__header-container">
+        <h3 class="product-item__header">
+          Full name of the product/ for example FENDER Squier MM Stratocaster Hard Tail Black
+        </h3>
+      </div>
+
+      <!-- фото / всякие описания / кнопки - в корзину, в избранное -->
+      <div class="product-item__content">
+
+        <!-- флекс с фоткой и описаниями, без кнопок  -->
+        <div class="product-item__main">
+          <!-- фото  -->
+          <div class="product-item__photo-container">
+              <img class="product-item__photo"
+              src="/img/product_page_guitar.png"
+              alt="Product photo">
+          </div>
+
+          <!-- описания  -->
+          <div class="product-item__description description">
+
+            <div class="description__header-container">
+              <p class="description__header">More about this item</p>
+            </div>
+
+            <div class="description__info-container info">
+              <table class="info__table">
+                <tr class="info__table-row">
+                  <td class="info__point">Brand Name</td>
+                  <td>FENDER</td>
+                </tr>
+                <tr class="info__table-row">
+                  <td class="info__point">Price</td>
+                  <td class="info__value">$500</td>
+                </tr>
+                <tr class="info__table-row">
+                  <td class="info__point">Color</td>
+                  <td class="info__value">black</td>
+                </tr>
+                <tr class="info__table-row">
+                  <td class="info__point">Body Material</td>
+                  <td class="info__value">Wood</td>
+                </tr>
+                <tr class="info__table-row">
+                  <td class="info__point">String Material Type</td>
+                  <td class="info__value">Nickel Steel</td>
+                </tr>
+                <tr class="info__table-row">
+                  <td class="info__point">Hand Orientation</td>
+                  <td class="info__value">Right</td>
+                </tr>
+
+                <tr class="info__table-row">
+                  <td class="info__point">Color</td>
+                  <td class="info__value">Black</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- кнопки   -->
+        <div class="product-item__buttons">
+          <button class="product-item__button">
+            <img class="product-item__button-icon"
+            src="/img/header__cart-icon.f2c550fc.svg" alt="cart icon">
+            Add to cart</button>
+          <button class="product-item__button">Add to favorite</button>
+        </div>
+      </div>
+
+    </div>
+  </BaseContainer>
+</template>
+
+<script>
+import BaseContainer from '@/components/UI/BaseContainer.vue';
+
+export default {
+  components: {
+    BaseContainer,
+  },
+};
+</script>
+
+<style lang="postcss" scoped>
+.product-item {
+  margin: 80px 0;
+
+  &__main {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__photo-container {
+    max-width: 45%;
+  }
+}
+.product-item__header {
+  font-size: 28px;
+  line-height: 130%;
+  color: var(--black);
+
+  &-container {
+    padding: 30px;
+  }
+}
+.product-item__content {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 1225px) {
+    flex-direction: column;
+  }
+}
+
+.info {
+  &__point {
+    font-size: 18px;
+    line-height: 130%;
+    color: var(--black)
+  }
+  &__value {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    color: var(--light-grey);
+  }
+
+  &__table-row {
+    height: 40px;
+
+    @media (max-width: 760px) {
+      height: auto;
+    }
+  }
+}
+.description__header-container {
+  padding: 20px 0;
+}
+.description__header {
+  font-size: 26px;
+  line-height: 130%;
+  color: var(--black)
+}
+
+.product-item__buttons {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  justify-content: center;
+  min-width: 25%;
+}
+
+.product-item__button {
+  border: 1px solid var(--white);
+  border-radius: 20px;
+  padding: 10px 30px;
+
+  font-family: 'Montserrat';
+  color: #FFFFFF;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  background-color: var(--light-grey);
+
+  margin-bottom: 30px;
+
+  &-icon {
+    margin: 0 5px;
+  }
+}
+
+</style>

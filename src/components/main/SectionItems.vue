@@ -1,30 +1,31 @@
 <template>
-  <ProductItem v-for="product in products" :key="product.img"
+  <ProductPreview v-for="product in products" :key="product.img"
     :name="product.name"
     :price="product.price"
     :description="product.description"
     :colors="product.colors"
     :img="product.img"
-    :theme="cardsTheme"
+    :id="product.id"
+    :theme="theme"
     :mode="mode"
-  ></ProductItem>
+  ></ProductPreview>
 </template>
 
 <script>
-import ProductItem from './ProductItem.vue';
+import ProductPreview from '@/components/main/ProductPreview.vue';
 
 export default {
   components: {
-    ProductItem,
+    ProductPreview,
   },
   props: {
     products: {
       type: Array,
       default: () => [],
     },
-    cardsTheme: {
+    theme: {
       type: String,
-      default: 'default',
+      default: 'white',
     },
     mode: {
       type: String,

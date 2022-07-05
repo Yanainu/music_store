@@ -1,9 +1,6 @@
 <template>
   <div :class="`article article--theme--${theme}`">
-    <div class="article__pic-container">
-    <!-- style="background: url('../../../public/img/main__gear-heads_photo1.jpg');"
-    style="background: url('../../assets/images/main__gear-heads_photo1.jpg');" -->
-    <!-- тут внутри фоновая картинка  -->
+    <div class="article__pic-container" :style="imgStyle">
     </div>
 
     <div class="article__description-container">
@@ -37,6 +34,14 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      imgStyle: {
+        backgroundImage: `url(${this.imageUrl})`,
+        backgroundSize: 'cover',
+      },
+    };
+  },
 };
 </script>
 
@@ -49,7 +54,6 @@ export default {
   &__pic-container {
     height: 487px;
     border-radius: 10px 10px 0 0;
-    background-size: cover;
   }
 
   &:nth-child(1),

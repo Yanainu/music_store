@@ -15,9 +15,9 @@
 </template>
 
 <script>
-import BaseContainer from '../UI/BaseContainer.vue';
-import TheNavigation from './TheNavigation.vue';
-import WideBanner from './WideBanner.vue';
+import BaseContainer from '@/components/UI/BaseContainer.vue';
+import TheNavigation from '@/components/header/TheNavigation.vue';
+import WideBanner from '@/components/header/WideBanner.vue';
 
 export default {
   components: {
@@ -30,7 +30,7 @@ export default {
 
 <style lang="postcss" scoped>
 .header {
-  background: url(../../assets/images/header__background.jpg) no-repeat top center;;
+  background: url(@/assets/images/header__background.jpg) no-repeat top center;
   background-size: cover;
   height: 808px;
   padding-top: 56px;
@@ -50,7 +50,7 @@ export default {
   }
 
   @media (max-width: 1225px) {
-    background: url(../../assets/images/header__background-mobile.jpg) no-repeat top center;
+    background: url(@/assets/images/header__background-mobile.jpg) no-repeat top center;
     background-size: cover;
 
     &__main-text-container {

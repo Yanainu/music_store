@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import ArticleCard from './ArticleCard.vue';
+import ArticleCard from '@/components/main/ArticleCard.vue';
 
 export default {
   props: {

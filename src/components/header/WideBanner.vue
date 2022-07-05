@@ -17,7 +17,7 @@ export default {};
 <style lang="postcss" scoped>
 .wide-banner {
   background-color: var(--red);
-  background: url(../../assets/images/banner-background.jpg);
+  background: url(@/assets/images/banner-background.jpg);
   background-size: 100% 100%;
   border: 1px solid #000000;
   box-shadow: 0px 2px 4px rgba(6, 6, 8, 0.1), 0px 12px 32px rgba(0, 0, 0, 0.05);
