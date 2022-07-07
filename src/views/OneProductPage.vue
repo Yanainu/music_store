@@ -65,11 +65,21 @@
 
         <!-- кнопки   -->
         <div class="product-item__buttons">
-          <button class="product-item__button">
-            <img class="product-item__button-icon"
-            src="/img/header__cart-icon.f2c550fc.svg" alt="cart icon">
-            Add to cart</button>
-          <button class="product-item__button">Add to favorite</button>
+          <BaseButton
+            size="large">
+            <template v-slot:button>
+              <img class="product-item__button-icon"
+              src="/img/header__cart-icon.f2c550fc.svg" alt="cart icon">
+              Add to cart
+            </template>
+          </BaseButton>
+
+          <BaseButton
+            size="large">
+            <template v-slot:button>
+              Add to favorite
+            </template>
+          </BaseButton>
         </div>
       </div>
 
@@ -79,11 +89,14 @@
 
 <script>
 import BaseContainer from '@/components/UI/BaseContainer.vue';
+import BaseButton from '@/components/UI/BaseButton.vue';
 
 export default {
   components: {
     BaseContainer,
+    BaseButton,
   },
+
 };
 </script>
 
@@ -152,28 +165,12 @@ export default {
   display: flex;
   flex-direction: column;
   padding: 30px;
-  justify-content: center;
+  justify-content: space-around;
   min-width: 25%;
 }
 
-.product-item__button {
-  border: 1px solid var(--white);
-  border-radius: 20px;
-  padding: 10px 30px;
-
-  font-family: 'Montserrat';
-  color: #FFFFFF;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 150%;
-  background-color: var(--light-grey);
-
-  margin-bottom: 30px;
-
-  &-icon {
-    margin: 0 5px;
-  }
+.product-item__button-icon {
+  margin: 0 5px;
 }
 
 </style>

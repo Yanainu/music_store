@@ -1,20 +1,30 @@
 <template>
-  <div :class="`article article--theme--${theme}`">
-    <div class="article__pic-container" :style="imgStyle">
-    </div>
+  <router-link class="article-link" :to="{
+    name: $options.detailArticlePage,
+    params: {
+      id: id,
+      },
+    }">
 
-    <div class="article__description-container">
-      <h3 class="article__description-title">
-        {{ title }}
-      </h3>
-      <p class="article__description-text">
-        {{ subhead }}
-      </p>
+    <div :class="`article article--theme--${theme}`">
+      <div class="article__pic-container" :style="imgStyle">
+      </div>
+
+      <div class="article__description-container">
+        <h3 class="article__description-title">
+          {{ title }}
+        </h3>
+        <p class="article__description-text">
+          {{ subhead }}
+        </p>
+      </div>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>
+import { LESSONS_PAGE_DETAIL } from '@/router/router-names';
+
 export default {
   props: {
     title: {
@@ -33,6 +43,10 @@ export default {
       type: String,
       required: true,
     },
+    id: {
+      type: String,
+      required: true,
+    },
   },
   data() {
     return {
@@ -42,19 +56,13 @@ export default {
       },
     };
   },
+  detailArticlePage: LESSONS_PAGE_DETAIL,
 };
 </script>
 
 <style lang="postcss" scoped>
-.article {
-  margin-bottom: 48px;
-  margin-right: 32px;
-  border-radius: 10px;
-
-  &__pic-container {
-    height: 487px;
-    border-radius: 10px 10px 0 0;
-  }
+.article-link {
+  text-decoration: none;
 
   &:nth-child(1),
   &:nth-child(2) {
@@ -68,6 +76,40 @@ export default {
   &:nth-child(2),
   &:nth-child(5) {
     margin-right: 0;
+  }
+
+  @media (max-width: 1225px) {
+    &:nth-child(3) {
+      display: none;
+    }
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(4),
+    &:nth-child(5) {
+      width: 47%;
+  }
+
+  @media (max-width: 760px) {
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4),
+    &:nth-child(5) {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+  }
+}
+.article {
+  width: 100%;
+  margin-bottom: 48px;
+  margin-right: 32px;
+  border-radius: 10px;
+
+  &__pic-container {
+    height: 487px;
+    border-radius: 10px 10px 0 0;
   }
 
   &__description-container {
@@ -109,28 +151,5 @@ export default {
       }
     }
   }
-
-  @media (max-width: 1225px) {
-    &:nth-child(3) {
-      display: none;
-    }
-    &:nth-child(1),
-    &:nth-child(2),
-    &:nth-child(4),
-    &:nth-child(5) {
-      width: 47%;
-  }
-
-  @media (max-width: 760px) {
-    &:nth-child(1),
-    &:nth-child(2),
-    &:nth-child(3),
-    &:nth-child(4),
-    &:nth-child(5) {
-      width: 100%;
-      margin-right: 0;
-    }
-  }
-}
 }
 </style>

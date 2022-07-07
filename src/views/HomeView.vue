@@ -8,10 +8,15 @@
         New Products
       </template>
       <template v-slot:content>
-        <SectionItems
-          :products="products"
+        <GuitarPreview v-for="product in products" :key="product.id"
+          :name="product.name"
+          :price="product.price"
+          :description="product.description"
+          :colors="product.colors"
+          :img="product.img"
+          :id="product.id"
           theme="grey"
-        ></SectionItems>
+        ></GuitarPreview>
       </template>
     </SectionWrapper>
 
@@ -22,10 +27,15 @@
           Popular Finds
         </template>
         <template v-slot:content>
-          <SectionItems
-            :products="accessories"
+          <AccessoryPreview  v-for="accessory in accessories" :key="accessory.id"
+            :name="accessory.name"
+            :price="accessory.price"
+            :description="accessory.description"
+            :colors="accessory.colors"
+            :img="accessory.img"
+            :id="accessory.id"
             theme="white"
-          ></SectionItems>
+          ></AccessoryPreview>
         </template>
     </SectionWrapper>
 
@@ -37,9 +47,13 @@
       </template>
       <template v-slot:content>
         <div class="articles-container">
-          <SectionArticles
-            :articles="articles"
-          ></SectionArticles>
+          <ArticlePreview v-for="article in articles" :key="article.img"
+            :title="article.title"
+            :subhead="article.subhead"
+            :imageUrl="article.imageUrl"
+            :id="article.id"
+            theme="dark"
+        ></ArticlePreview>
         </div>
       </template>
     </SectionWrapper>
@@ -51,8 +65,9 @@
 <script>
 import SectionWrapper from '@/components/UI/SectionWrapper.vue';
 import TheHeader from '@/components/header/TheHeader.vue';
-import SectionItems from '@/components/main/SectionItems.vue';
-import SectionArticles from '@/components/main/SectionArticles.vue';
+import GuitarPreview from '@/components/main/GuitarPreview.vue';
+import AccessoryPreview from '@/components/main/AccessoryPreview.vue';
+import ArticlePreview from '@/components/main/ArticlePreview.vue';
 import TheFooter from '@/components/footer/TheFooter.vue';
 import products from '@/helpers/products.';
 import accessories from '@/helpers/accessories';
@@ -62,8 +77,9 @@ export default {
   components: {
     TheHeader,
     SectionWrapper,
-    SectionItems,
-    SectionArticles,
+    GuitarPreview,
+    AccessoryPreview,
+    ArticlePreview,
     TheFooter,
   },
   data() {

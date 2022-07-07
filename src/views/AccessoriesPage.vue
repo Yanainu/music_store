@@ -2,38 +2,19 @@
   <BaseHeader mode="accessories">
   </BaseHeader>
 
-  <SectionWrapper>
-    <template v-slot:headText>
-      Accessories
-    </template>
-    <template v-slot:content>
-      <SectionItems
-        :products="accessories"
-      ></SectionItems>
-    </template>
-  </SectionWrapper>
+  <RouterView/>
 
   <TheFooter/>
 </template>
 
 <script>
 import BaseHeader from '@/components/UI/BaseHeader.vue';
-import SectionWrapper from '@/components/UI/SectionWrapper.vue';
-import SectionItems from '@/components/main/SectionItems.vue';
 import TheFooter from '@/components/footer/TheFooter.vue';
-import accessories from '@/helpers/accessories';
 
 export default {
   components: {
     BaseHeader,
-    SectionWrapper,
-    SectionItems,
     TheFooter,
-  },
-  data() {
-    return {
-      accessories,
-    };
   },
 };
 </script>

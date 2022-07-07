@@ -19,7 +19,7 @@ export default {
     },
     mode: {
       type: String,
-      default: '',
+      default: 'default',
     },
   },
 };
@@ -45,5 +45,15 @@ export default {
         color: black;
       }
   }
+}
+
+.router-link-active {
+    &::after {
+      content: '';
+      width: 100%;
+      height: 4px;
+      background: #ab0433;
+      display: block;
+    }
 }
 </style>

@@ -1,34 +1,30 @@
 <template>
-
-  <router-link class="product-item__link" :to="`/guitars/${id}`">
-    <div class="product-item">
-      <!-- pic  -->
-      <div :class="`product-item__photo-container product-item__photo-container--theme--${theme}`">
-        <img class="product-item__photo"
-        :src="img"
-        alt="Product photo">
+  <div class="product-item">
+    <!-- pic  -->
+    <div :class="`product-item__photo-container product-item__photo-container--theme--${theme}`">
+      <img class="product-item__photo"
+      :src="img"
+      alt="Product photo">
+    </div>
+    <!-- all text + price -->
+    <div class="product-item__info product-info">
+      <!-- main info (name price) -->
+      <div class="product-info__header">
+        <p class="product-info__name">{{ name }}</p>
+        <p class="product-info__price">{{ price }}</p>
       </div>
-      <!-- all text + price -->
-      <div class="product-item__info product-info">
-        <!-- main info (name price) -->
-        <div class="product-info__header">
-          <p class="product-info__name">{{ name }}</p>
-          <p class="product-info__price">{{ price }}</p>
-        </div>
-        <!-- main info(description) -->
-        <div class="product-info__description-container">
-          <p class="product-info__description">{{ description }}</p>
-        </div>
-        <!-- colors avaliable -->
-        <div class="product-info__badge-container">
-          <p class="product-info__badge">
-            <span class="product-info__badge-num">{{ colors }}</span> colors available
-          </p>
-        </div>
+      <!-- main info(description) -->
+      <div class="product-info__description-container">
+        <p class="product-info__description">{{ description }}</p>
+      </div>
+      <!-- colors avaliable -->
+      <div class="product-info__badge-container">
+        <p class="product-info__badge">
+          <span class="product-info__badge-num">{{ colors }}</span> colors available
+        </p>
       </div>
     </div>
-  </router-link>
-
+  </div>
 </template>
 
 <script>
@@ -52,7 +48,7 @@ export default {
     },
     img: {
       type: String,
-      default: '',
+      default: 'default',
     },
     theme: {
       type: String,
@@ -67,27 +63,6 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.product-item__link {
-  width: 30%;
-  text-decoration: none;
-
-  @media (max-width: 1225px) {
-    justify-content: center;
-    width: 47%;
-
-    &:nth-child(3) {
-      display: none;
-    }
-  }
-
-  @media (max-width: 760px) {
-    width: auto;
-
-    &:nth-child(3) {
-      display: block;
-    }
-  }
-}
 .product-item {
   margin-bottom: 37px;
   margin-right: 32px;

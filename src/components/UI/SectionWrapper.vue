@@ -7,7 +7,7 @@
         </h2>
       </div>
 
-      <div :class="`section__items-container section__items-container--${mode}`">
+      <div class="section__items-container">
         <slot name="content"></slot>
       </div>
     </BaseContainer>
@@ -32,7 +32,7 @@ export default {
     },
     mode: {
       type: String,
-      default: '',
+      default: 'default',
     },
   },
 };
@@ -82,18 +82,18 @@ export default {
   }
 }
 .section__items-container {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 26px;
+  padding: 0 5px;
+  justify-content: space-between;
+
+  @media (max-width: 760px) {
+    justify-content: flex-start;
+    flex-direction: column;
     padding-top: 26px;
-    padding: 0 5px;
-    justify-content: space-between;
-
-    @media (max-width: 760px) {
-      justify-content: flex-start;
-      flex-direction: column;
-      padding-top: 26px;
-    }
-
   }
+
+}
 
 </style>
