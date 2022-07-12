@@ -4,7 +4,7 @@ export default [
     price: '$2,995',
     description: 'Product description here',
     colors: 0,
-    id: 'acc1',
+    id: 1,
     img: './img/main__popular-finds_item1-back.png',
   },
   {
@@ -12,7 +12,7 @@ export default [
     price: '$2,995',
     description: 'Product description here',
     colors: 0,
-    id: 'acc2',
+    id: 2,
     img: './img/main__popular-finds_item2-back.png',
   },
   {
@@ -20,7 +20,7 @@ export default [
     price: '$2,995',
     description: 'Product description here',
     colors: 0,
-    id: 'acc3',
+    id: 3,
     img: './img/main__popular-finds_item3-back.png',
   },
   {
@@ -28,7 +28,7 @@ export default [
     price: '$2,995',
     description: 'Product description here',
     colors: 0,
-    id: 'acc4',
+    id: 4,
     img: './img/main__popular-finds_item4-back.png',
   },
   {
@@ -36,7 +36,7 @@ export default [
     price: '$2,995',
     description: 'Product description here',
     colors: 0,
-    id: 'acc5',
+    id: 5,
     img: './img/main__popular-finds_item4-back.png',
   },
   {
@@ -44,7 +44,7 @@ export default [
     price: '$2,995',
     description: 'Product description here',
     colors: 0,
-    id: 'acc6',
+    id: 6,
     img: './img/main__popular-finds_item4-back.png',
   },
   {
@@ -52,7 +52,7 @@ export default [
     price: '$2,995',
     description: 'Product description here',
     colors: 0,
-    id: 'acc7',
+    id: 7,
     img: './img/main__popular-finds_item4-back.png',
   },
   {
@@ -60,7 +60,7 @@ export default [
     price: '$2,995',
     description: 'Product description here',
     colors: 0,
-    id: 'acc8',
+    id: 8,
     img: './img/main__popular-finds_item4-back.png',
   },
   {
@@ -68,7 +68,7 @@ export default [
     price: '$2,995',
     description: 'Product description here',
     colors: 0,
-    id: 'acc9',
+    id: 9,
     img: './img/main__popular-finds_item4-back.png',
   },
 ];

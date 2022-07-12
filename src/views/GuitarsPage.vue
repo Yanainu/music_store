@@ -16,5 +16,6 @@ export default {
     BaseHeader,
     TheFooter,
   },
+
 };
 </script>

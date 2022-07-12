@@ -18,9 +18,9 @@
 </template>
 
 <script>
-import accessories from '@/helpers/accessories';
 import SectionWrapper from '@/components/UI/SectionWrapper.vue';
 import AccessoryPreview from '@/components/main/AccessoryPreview.vue';
+import { getData, formatProductsData } from '@/helpers/utils';
 
 export default {
   components: {
@@ -29,8 +29,13 @@ export default {
   },
   data() {
     return {
-      accessories,
+      accessories: [],
     };
+  },
+  mounted() {
+    getData('http://localhost:1337/api/accessories').then((result) => {
+      this.accessories = formatProductsData(result);
+    });
   },
 };
 </script>

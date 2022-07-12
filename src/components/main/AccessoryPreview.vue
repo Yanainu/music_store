@@ -35,15 +35,15 @@ export default {
     },
     name: {
       type: String,
-      default: 'Product Name',
+      required: true,
     },
     price: {
       type: String,
-      default: 'Price',
+      required: true,
     },
     description: {
       type: String,
-      default: 'Product Description',
+      required: true,
     },
     colors: {
       type: Number,
@@ -51,10 +51,10 @@ export default {
     },
     img: {
       type: String,
-      default: 'default',
+      required: true,
     },
     id: {
-      type: String,
+      type: Number,
       required: true,
     },
   },

@@ -4,7 +4,7 @@
       Guitars
     </template>
     <template v-slot:content>
-      <GuitarPreview v-for="product in products" :key="product.img"
+      <GuitarPreview v-for="product in products" :key="product.id"
         :name="product.name"
         :price="product.price"
         :description="product.description"
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import products from '@/helpers/products.';
+import { getData, formatProductsData } from '@/helpers/utils';
 import SectionWrapper from '@/components/UI/SectionWrapper.vue';
 import GuitarPreview from '@/components/main/GuitarPreview.vue';
 
@@ -29,8 +29,13 @@ export default {
   },
   data() {
     return {
-      products,
+      products: [],
     };
+  },
+  mounted() {
+    getData('http://localhost:1337/api/guitars').then((result) => {
+      this.products = formatProductsData(result);
+    });
   },
 };
 </script>

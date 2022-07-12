@@ -10,7 +10,7 @@
           :subhead="article.subhead"
           :imageUrl="article.imageUrl"
           :id="article.id"
-          theme="dark"
+          :theme="article.theme"
         ></ArticlePreview>
       </div>
     </template>
@@ -20,8 +20,7 @@
 <script>
 import SectionWrapper from '@/components/UI/SectionWrapper.vue';
 import ArticlePreview from '@/components/main/ArticlePreview.vue';
-// import SectionArticles from '@/components/main/SectionArticles.vue';
-import articles from '@/helpers/articles';
+import { getData, formatArticlesData } from '@/helpers/utils';
 
 export default {
   components: {
@@ -30,8 +29,13 @@ export default {
   },
   data() {
     return {
-      articles,
+      articles: [],
     };
+  },
+  mounted() {
+    getData('http://localhost:1337/api/articles').then((result) => {
+      this.articles = formatArticlesData(result);
+    });
   },
 };
 </script>

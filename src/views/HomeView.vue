@@ -1,6 +1,5 @@
 <template>
   <TheHeader/>
-
   <main class="main">
     <!-- new products section  -->
     <SectionWrapper>
@@ -52,7 +51,7 @@
             :subhead="article.subhead"
             :imageUrl="article.imageUrl"
             :id="article.id"
-            theme="dark"
+            :theme="article.theme"
         ></ArticlePreview>
         </div>
       </template>
@@ -69,9 +68,7 @@ import GuitarPreview from '@/components/main/GuitarPreview.vue';
 import AccessoryPreview from '@/components/main/AccessoryPreview.vue';
 import ArticlePreview from '@/components/main/ArticlePreview.vue';
 import TheFooter from '@/components/footer/TheFooter.vue';
-import products from '@/helpers/products.';
-import accessories from '@/helpers/accessories';
-import articles from '@/helpers/articles';
+import { getData, formatProductsData, formatArticlesData } from '@/helpers/utils';
 
 export default {
   components: {
@@ -84,10 +81,21 @@ export default {
   },
   data() {
     return {
-      products: products.slice(0, 3),
-      accessories: accessories.slice(0, 3),
-      articles,
+      products: [],
+      accessories: [],
+      articles: [],
     };
+  },
+  mounted() {
+    getData('http://localhost:1337/api/guitars').then((result) => {
+      this.products = formatProductsData(result).slice(0, 3);
+    });
+    getData('http://localhost:1337/api/accessories').then((result) => {
+      this.accessories = formatProductsData(result).slice(0, 3);
+    });
+    getData('http://localhost:1337/api/articles').then((result) => {
+      this.articles = formatArticlesData(result);
+    });
   },
 };
 </script>
