@@ -10,6 +10,7 @@ import LessonsPage from '@/views/LessonsPage.vue';
 import LessonsPageAll from '@/views/LessonsPageAll.vue';
 import OneProductPage from '@/views/OneProductPage.vue';
 import OneLessonPage from '@/views/OneLessonPage.vue';
+import OneAccessoryPage from '@/views/OneAccessoryPage.vue';
 
 import {
   HOME_PAGE,
@@ -56,7 +57,7 @@ const routes = [
       {
         path: ':id',
         name: ACCESSORIES_PAGE_DETAIL,
-        component: OneProductPage,
+        component: OneAccessoryPage,
       },
     ],
   },

@@ -103,7 +103,7 @@ export default {
     };
   },
   mounted() {
-    getDetailsById(this.$route.params.id, 'guitars').then((result) => {
+    getDetailsById(this.$route.params.id, 'accessories').then((result) => {
       this.currentProductData = formatOneProductData(result);
     });
   },

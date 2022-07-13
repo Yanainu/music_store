@@ -25,3 +25,30 @@ export const formatArticlesData = (receivedData) => {
   }));
   return resultArray;
 };
+
+export const formatOneProductData = (receivedData) => {
+  const resultObject = {
+    name: receivedData.attributes.name,
+    price: receivedData.attributes.price,
+    description: receivedData.attributes.description,
+    colors: receivedData.attributes.colors,
+    id: receivedData.id,
+    img: receivedData.attributes.img,
+  };
+  return resultObject;
+};
+
+export const formatOneLessonData = (receivedData) => {
+  const resultObject = {
+    title: receivedData.attributes.title,
+    subhead: receivedData.attributes.subhead,
+    imageUrl: receivedData.attributes.imageUrl,
+    id: receivedData.id,
+  };
+  return resultObject;
+};
+
+export const getDetailsById = (id, route) => {
+  const receivedData = getData(`http://localhost:1337/api/${route}/${id}`);
+  return receivedData;
+};

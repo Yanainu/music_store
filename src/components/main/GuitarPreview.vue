@@ -3,7 +3,6 @@
   <router-link class="router-link" :to="{
     name: $options.detailGuitarPage,
     params: {
-      // тут будет айди с бэка
       id: id,
       },
     }">
