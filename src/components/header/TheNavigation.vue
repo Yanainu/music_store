@@ -22,10 +22,18 @@
           alt="cart icon">
       </button>
 
-      <button class="navigation__button">
-        <img class="navigation__button-icon"
-          src="@/assets/images/header__user-icon.svg"
-          alt="authorize icon">
+      <router-link class="router-link" :to="{
+          name: $options.loginPage,
+        }">
+        <button v-if="!userLoggedIn" class="navigation__button">
+          <img class="navigation__button-icon"
+            src="@/assets/images/header__user-icon.svg"
+            alt="authorize icon">
+        </button>
+      </router-link>
+
+      <button class="navigation__button" v-if="userLoggedIn" @click="logout">
+        Logout
       </button>
 
       <button class="navigation__button burger">
@@ -37,15 +45,36 @@
 
 <script>
 import TheMenu from '@/components/header/TheMenu.vue';
+import { LOGIN_PAGE } from '@/router/router-names';
 
 export default {
   components: {
     TheMenu,
   },
+  methods: {
+    logout() {
+      localStorage.removeItem('currentJwt');
+      this.$router.go('/');
+    },
+  },
+  data() {
+    return {
+      userLoggedIn: null,
+    };
+  },
+  mounted() {
+    if (localStorage.currentJwt) {
+      this.userLoggedIn = true;
+    }
+  },
+  loginPage: LOGIN_PAGE,
 };
 </script>
 
 <style lang="postcss" scoped>
+img {
+  max-width: none;
+}
 .navigation {
     display: flex;
     justify-content: space-between;
@@ -64,14 +93,16 @@ export default {
     }
 
     &__button {
-        padding: 8px;
+        padding: 12px;
         background: none;
         border: none;
         cursor: pointer;
+        color: #FCFCFC;
+        font-size: 18px;
 
         &-container {
-        padding: 8px;
-    }
+          padding: 8px;
+        }
     }
 
     @media (max-width: 1225px) {
@@ -93,5 +124,8 @@ export default {
     @media (max-width: 1225px) {
         display: block;
     }
+}
+.label {
+  color: white;
 }
 </style>

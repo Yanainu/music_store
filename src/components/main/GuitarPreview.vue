@@ -67,7 +67,7 @@ export default {
 
 </script>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
 .router-link {
   width: 30%;
   text-decoration: none;

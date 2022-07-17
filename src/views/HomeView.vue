@@ -86,7 +86,7 @@ export default {
       articles: [],
     };
   },
-  mounted() {
+  created() {
     getData('http://localhost:1337/api/guitars').then((result) => {
       this.products = formatProductsData(result).slice(0, 3);
     });

@@ -52,3 +52,12 @@ export const getDetailsById = (id, route) => {
   const receivedData = getData(`http://localhost:1337/api/${route}/${id}`);
   return receivedData;
 };
+
+export const backendUrl = 'http://localhost:1337';
+
+export const saveJwtTokenToLocalStorage = (response) => {
+  response.json().then((data) => {
+    localStorage.setItem('currentJwt', data.jwt);
+    console.log('jwt in storage', data.jwt);
+  });
+};

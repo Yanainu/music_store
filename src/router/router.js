@@ -11,6 +11,12 @@ import LessonsPageAll from '@/views/LessonsPageAll.vue';
 import OneProductPage from '@/views/OneProductPage.vue';
 import OneLessonPage from '@/views/OneLessonPage.vue';
 import OneAccessoryPage from '@/views/OneAccessoryPage.vue';
+import LoginPage from '@/views/authentification/LoginPage.vue';
+import RegisterPage from '@/views/authentification/RegisterPage.vue';
+import CreatePage from '@/views/creation/CreatePage.vue';
+import CreateChoice from '@/views/creation/CreateChoice.vue';
+import CreateProduct from '@/views/creation/CreateProduct.vue';
+import CreateArticle from '@/views/creation/CreateArticle.vue';
 
 import {
   HOME_PAGE,
@@ -21,6 +27,11 @@ import {
   LESSONS_PAGE,
   LESSONS_PAGE_DETAIL,
   REPAIRS_PAGE,
+  LOGIN_PAGE,
+  REGISTER_PAGE,
+  CREATE_PAGE,
+  CREATE_PRODUCT,
+  CREATE_ARTICLE,
 } from '@/router/router-names';
 
 const routes = [
@@ -28,6 +39,16 @@ const routes = [
     path: '/',
     name: HOME_PAGE,
     component: HomeView,
+  },
+  {
+    path: '/login',
+    name: LOGIN_PAGE,
+    component: LoginPage,
+  },
+  {
+    path: '/register',
+    name: REGISTER_PAGE,
+    component: RegisterPage,
   },
   {
     path: '/guitars',
@@ -82,6 +103,28 @@ const routes = [
     name: REPAIRS_PAGE,
     component: RepairsPage,
   },
+  {
+    path: '/create',
+    name: CREATE_PAGE,
+    component: CreatePage,
+    children: [
+      {
+        path: '',
+        component: CreateChoice,
+      },
+      {
+        path: ':creationType',
+        name: CREATE_PRODUCT,
+        component: CreateProduct,
+      },
+      {
+        path: ':creationType',
+        name: CREATE_ARTICLE,
+        component: CreateArticle,
+      },
+    ],
+  },
+
 ];
 
 const router = createRouter({

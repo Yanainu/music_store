@@ -28,6 +28,7 @@ export default {
   border-radius: 32px;
   border: 0px;
   line-height: 130%;
+  cursor: pointer;
 
   &--large {
     font-size: 18px;

@@ -3,7 +3,7 @@
     <MenuLink v-for="link in menuLinks" :key="link.name"
       :name="link.name"
       :href="link.href"
-      :mode="mode"
+      :needLogin="link.needLogin"
     ></MenuLink>
   </div>
 </template>
@@ -12,12 +12,6 @@
 import MenuLink from '@/components/header/MenuLink.vue';
 
 export default {
-  props: {
-    mode: {
-      type: String,
-      default: 'default',
-    },
-  },
   components: {
     MenuLink,
   },
@@ -27,18 +21,27 @@ export default {
         {
           name: 'Guitars',
           href: '/guitars',
+          needLogin: false,
         },
         {
           name: 'Accessories',
           href: '/accessories',
+          needLogin: false,
         },
         {
           name: 'Lessons',
           href: '/lessons',
+          needLogin: false,
         },
         {
           name: 'Repairs',
           href: '/repairs',
+          needLogin: false,
+        },
+        {
+          name: 'Create',
+          href: '/create',
+          needLogin: true,
         },
       ],
     };

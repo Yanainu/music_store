@@ -1,8 +1,18 @@
 <template>
-  <div class="menu__item">
-      <router-link :to="href" :class="`menu__link menu__link--mode--${mode}`">
+  <div class="menu__item" v-if="!userLoggedIn && !needLogin">
+      <router-link
+      :to="href"
+      class="menu__link">
       {{ name }}
       </router-link>
+  </div>
+
+  <div class="menu__item" v-if="userLoggedIn">
+    <router-link
+    :to="href"
+    class="menu__link">
+    {{ name }}
+    </router-link>
   </div>
 </template>
 
@@ -17,10 +27,20 @@ export default {
       type: String,
       required: true,
     },
-    mode: {
-      type: String,
-      default: 'default',
+    needLogin: {
+      type: Boolean,
+      required: true,
     },
+  },
+  data() {
+    return {
+      userLoggedIn: null,
+    };
+  },
+  mounted() {
+    if (localStorage.currentJwt) {
+      this.userLoggedIn = true;
+    }
   },
 };
 </script>
@@ -28,7 +48,7 @@ export default {
 <style lang="postcss" scoped>
 .menu {
   &__item {
-    margin-right: 24px;
+    margin-right: 14px;
     padding: 16px;
 
     &:last-child {
@@ -40,10 +60,6 @@ export default {
       text-decoration: none;
       color: #FCFCFC;
       font-size: 18px;
-
-      &--mode--dark {
-        color: black;
-      }
   }
 }
 
